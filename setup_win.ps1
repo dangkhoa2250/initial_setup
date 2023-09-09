@@ -44,7 +44,6 @@ function Write-Done {
 }
 
 # Start
-
 # Modify a Registry value
 Start-Process -Wait powershell -verb runas -ArgumentList "Set-ItemProperty -Path REGISTRY::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System -Name ConsentPromptBehaviorAdmin -Value 0"
 Write-Start -msg "Install Scoop..."
@@ -56,9 +55,15 @@ if (Get-Command scoop -ErrorAction SilentlyContinue) {
 	# Download and execute the Scoop installer script
 	Invoke-WebRequest get.scoop.sh | Invoke-Expression
 }
-
 Write-Done
-Write-State -msg "Initializig Scoop..."
+
+Write-Start -msg "Install Chocolatey"
+	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+Write-Done
+Write-Start -msg "Install Unikey"
+	choco install unikey
+
+Write-Start -msg "Initializig Scoop..."
 	scoop install git
 	scoop bucket add extras
 	scoop bucket add nerd-fonts
@@ -70,6 +75,7 @@ Write-Start -msg "Installing Scoop's package"
 	scoop install brave googlechrome
 	scoop install neovim vscode gcc miniconda3 nodejs python conemu
 	scoop install spotify
+	scoop install 
 Write-Done
 
 Write-Start -msg "Installing Powertoys"
