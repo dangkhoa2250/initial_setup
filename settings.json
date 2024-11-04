@@ -4,15 +4,6 @@
     "actions": 
     [
         {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "id": "User.copy.644BA8F2",
-            "keys": "ctrl+c"
-        },
-        {
             "command": "unbound",
             "keys": "alt+down"
         },
@@ -63,11 +54,11 @@
         {
             "command": 
             {
-                "action": "moveFocus",
-                "direction": "down"
+                "action": "copy",
+                "singleLine": false
             },
-            "id": "User.moveFocus.F747588A",
-            "keys": "ctrl+shift+j"
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
         },
         {
             "command": 
@@ -83,10 +74,10 @@
             "command": 
             {
                 "action": "moveFocus",
-                "direction": "right"
+                "direction": "down"
             },
-            "id": "User.moveFocus.87C324ED",
-            "keys": "ctrl+shift+l"
+            "id": "User.moveFocus.F747588A",
+            "keys": "ctrl+shift+j"
         },
         {
             "command": 
@@ -96,6 +87,15 @@
             },
             "id": "User.splitPane.864CD510",
             "keys": "ctrl+shift+;"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "right"
+            },
+            "id": "User.moveFocus.87C324ED",
+            "keys": "ctrl+shift+l"
         },
         {
             "command": "paste",
@@ -146,60 +146,18 @@
     ],
     "profiles": 
     {
-        "defaults": 
-        {
-            "font": 
-            {
-                "face": "Hack Nerd Font"
-            }
-        },
+        "defaults": {},
         "list": 
         [
             {
-                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font": 
-                {
-                    "face": "Hack Nerd Font Propo"
-                },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
-                "commandline": "%SystemRoot%\\System32\\cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
-                "name": "\u30b3\u30de\u30f3\u30c9 \u30d7\u30ed\u30f3\u30d7\u30c8"
-            },
-            {
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": false,
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
-            },
-            {
-                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
-                "hidden": true,
-                "name": "Ubuntu-22.04",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "hidden": true,
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
-                "hidden": true,
-                "name": "Visual Studio Debug Console",
-                "source": "VSDebugConsole"
-            },
-            {
-                "guid": "{4ff56d04-d9cf-57ea-bae2-ad396374e7e3}",
-                "hidden": false,
-                "name": "Ubuntu 22.04.5 LTS",
-                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
+                "name": "Command Prompt"
             }
         ]
     },
